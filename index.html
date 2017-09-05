@@ -1,9 +1,9 @@
 <!DOCTYPE html><html><head>
 <title>Scratch Timeline</title>
 <link href="https://fonts.googleapis.com/css?family=Nobile" rel="stylesheet">
-<link href="../assets/scratch.css" rel="stylesheet">
+<link href="./scratch.css" rel="stylesheet">
 </head><body>
-<img src="../assets/sleeping.svg" id="img">
+<img src="./sleeping.svg" id="img">
 <p id="loading" hidden>I see your data from this mountain... I'll go get it...</p>
 <p id="found" hidden>Check out this cool timeline!</p>
 <div id="start"><h2>Enter your username:</h2>
@@ -15,7 +15,7 @@
 var user, projects, username, offset;offset = 0;
 function convertDate(d){var a = d.slice(0,10).split("-");return new Date(a[0],(a[1] - 1),a[2]);}
   function loadData(o){
-document.getElementById("img").src = "../assets/flagcat.svg";
+document.getElementById("img").src = "./flagcat.svg";
 document.getElementById("start").setAttribute("hidden","hidden");
 document.getElementById("found").setAttribute("hidden","hidden");
 document.getElementById("loading").removeAttribute("hidden");

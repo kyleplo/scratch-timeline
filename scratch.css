@@ -1,0 +1,3 @@
+html {font-family:'Nobile', sans-serif;text-align:center}
+input, button, select {font-size:1em;font-family:'Nobile', sans-serif;border:solid lightskyblue 3px;border-radius:25%;outline:none;}
+button {background-color:lightskyblue;color:white} button:hover {background-color:white;color:lightskyblue}

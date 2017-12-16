@@ -9,7 +9,6 @@
 <div id="start"><h2>Enter your username:</h2>
 <input type="text" id="uname"> <button onclick="loadData(0);">Go</button></div>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script type="text/javascript" src="https://kyleplogames.com/files/js/promisefetch.js"></script>
 <script type="text/javascript">
   google.charts.load("current", {packages:["timeline"]});
 var user, projects, username, offset;offset = 0;
@@ -20,8 +19,8 @@ document.getElementById("start").setAttribute("hidden","hidden");
 document.getElementById("found").setAttribute("hidden","hidden");
 document.getElementById("loading").removeAttribute("hidden");
 username = document.getElementById("uname").value;
-promiseFetch("https://api.scratch.mit.edu/users/" + username,"GET").then(function (r){user = JSON.parse(r)});
-promiseFetch("https://api.scratch.mit.edu/users/" + username + "/projects?limit=40&offset=" + o,"GET").then(function (r){projects = JSON.parse(r)});
+fetch("https://api.scratch.mit.edu/users/" + username,"GET").then(function (r){return r.json();}).then(function (r){user = r});
+fetch("https://api.scratch.mit.edu/users/" + username + "/projects?limit=40&offset=" + o,"GET").then(function (r){return r.json()}).then(function (r){projects = r});
 setTimeout(function (){drawChart(projects)},5000);
 }
   function drawChart(projects) {

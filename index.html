@@ -19,8 +19,8 @@ document.getElementById("start").setAttribute("hidden","hidden");
 document.getElementById("found").setAttribute("hidden","hidden");
 document.getElementById("loading").removeAttribute("hidden");
 username = document.getElementById("uname").value;
-fetch("https://api.scratch.mit.edu/users/" + username,"GET").then(function (r){return r.json();}).then(function (r){user = r});
-fetch("https://api.scratch.mit.edu/users/" + username + "/projects?limit=40&offset=" + o,"GET").then(function (r){return r.json()}).then(function (r){projects = r});
+fetch("https://api.scratch.mit.edu/users/" + username).then(function (r){return r.json();}).then(function (r){user = r});
+fetch("https://api.scratch.mit.edu/users/" + username + "/projects?limit=40&offset=" + o).then(function (r){return r.json()}).then(function (r){projects = r});
 setTimeout(function (){drawChart(projects)},5000);
 }
   function drawChart(projects) {
